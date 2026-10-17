@@ -28,6 +28,11 @@ public class StandardRoom extends HotelRoom {
         this.roomNo = roomNo;
     }
 
+    public StandardRoom(String roomNo, String name, int yearBuilt, Facility facility ){
+        this(roomNo, name, yearBuilt);
+        this.facility = facility;
+    }
+
     public Facility getFacility(){
         return facility;
     }
@@ -38,6 +43,11 @@ public class StandardRoom extends HotelRoom {
 
     public String getRoomNo() {
         return roomNo;
+    }
+
+    public String describe(){
+        String facilityName = (facility != null) ? facility.getName() : "None";
+        return super.describe() + "facility: " + facilityName ;
     }
 
 }
