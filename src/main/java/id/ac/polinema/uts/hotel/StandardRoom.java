@@ -17,53 +17,42 @@ package id.ac.polinema.uts.hotel;
  *   public ____ available;
  */
 public class StandardRoom {
+    public String roomNo;
+    public String name;
+    public int yearBuilt;
+    public boolean available;
 
-    /**
-     * Membuat kamar baru yang masih tersedia (belum dipesan).
-     * Bagian 3: roomNo tidak boleh kosong; name dan yearBuilt divalidasi seperti setter-nya.
-     */
     public StandardRoom(String roomNo, String name, int yearBuilt) {
         // TODO Bantuan: isi semua field. Kamar baru: apakah sedang terisi atau tidak?
         // Bagian 3: aturan validasi nama dan tahun sama dengan setter. Bisakah constructor
         // memakai setter-nya?
         //
         // Kerangka (Bagian 2):
-        //   this.roomNo = roomNo;
-        //   this.name = ____;
-        //   this.yearBuilt = ____;
-        //   this.available = ____;
+        this.roomNo = roomNo;
+        this.name = name;
+        this.yearBuilt = yearBuilt;
+        this.available = available;
         //
         // Kerangka (Bagian 3): ganti dua baris name dan yearBuilt dengan pemanggilan setter.
         //   setName(____);
         //   setYearBuilt(____);
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getRoomNo() {
-        // TODO Bantuan: kembalikan data yang disimpan constructor.
-        //
-        // Kerangka:
-        //   return ____;
-        throw new UnsupportedOperationException("Not implemented yet");
+        return roomNo;
     }
 
     public String getName() {
-        // TODO Bantuan: sama seperti getRoomNo.
-        throw new UnsupportedOperationException("Not implemented yet");
+        return name;
     }
 
     public int getYearBuilt() {
-        // TODO Bantuan: sama seperti getRoomNo.
-        throw new UnsupportedOperationException("Not implemented yet");
+        return yearBuilt;
     }
 
     /** True jika kamar kosong (belum dipesan). */
     public boolean isAvailable() {
-        // TODO Bantuan: field apa yang menyimpan status kamar?
-        //
-        // Kerangka:
-        //   return ____;
-        throw new UnsupportedOperationException("Not implemented yet");
+        return available = true;
     }
 
     /**
@@ -75,12 +64,11 @@ public class StandardRoom {
         // Method ini punya dua jalur return yang berbeda.
         //
         // Kerangka:
-        //   if (____) {
-        //       return false;
-        //   }
-        //   ____ = false;
-        //   return true;
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (!available) {
+            return false;
+        }
+        available = false;
+        return true;
     }
 
     /** Mengosongkan kamar: kamar bisa dipesan lagi. */
@@ -88,8 +76,7 @@ public class StandardRoom {
         // TODO Bantuan: satu baris saja. Status apa yang berubah?
         //
         // Kerangka:
-        //   ____ = true;
-        throw new UnsupportedOperationException("Not implemented yet");
+        available = true;
     }
 
     /**
