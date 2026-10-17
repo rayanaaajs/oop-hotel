@@ -1,6 +1,6 @@
 package id.ac.polinema.uts.hotel;
 
-public class Receiptionist {
+public class Receptionist {
     public boolean checkIn(StandardRoom room, Guest guest){
         if (guest.canBook() && room.isAvailable()) {
             room.reserve();

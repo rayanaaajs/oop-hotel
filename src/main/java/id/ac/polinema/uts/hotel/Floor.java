@@ -28,7 +28,7 @@ public class Floor {
 
     public StandardRoom findByRoomNo(String roomNo){
         for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i].getRoomNo().equalsIgnoreCase(roomNo)) {
+            if (rooms[i] != null && rooms[i].getRoomNo().equalsIgnoreCase(roomNo)) {
                 return rooms[i];
             }
         }
