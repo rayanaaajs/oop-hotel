@@ -21,6 +21,7 @@ public class StandardRoom {
     private String name;
     private int yearBuilt;
     private boolean available;
+    private Facility facility;
 
     public StandardRoom(String roomNo, String name, int yearBuilt) {
         // TODO Bantuan: isi semua field. Kamar baru: apakah sedang terisi atau tidak?
@@ -37,6 +38,14 @@ public class StandardRoom {
         // Kerangka (Bagian 3): ganti dua baris name dan yearBuilt dengan pemanggilan setter.
         setName(name);
         setYearBuilt(yearBuilt);
+    }
+
+    public Facility getFacility(){
+        return facility;
+    }
+
+    public void setFacility(Facility facility){
+        this.facility = facility;
     }
 
     public String getRoomNo() {

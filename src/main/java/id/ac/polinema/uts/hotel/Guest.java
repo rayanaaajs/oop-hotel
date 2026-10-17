@@ -18,6 +18,7 @@ public class Guest {
     private String guestId;
     private String name;
     private int bookingCount = 0;
+    private GuestCard card;
 
     /**
      * Membuat tamu yang belum punya pemesanan.
@@ -34,6 +35,11 @@ public class Guest {
         }
         this.guestId = guestId;
         setName(name);
+        this.card = new GuestCard("GC-"+ guestId);
+    }
+
+    public GuestCard getCard(){
+        return card;
     }
 
     public String getGuestId() {
