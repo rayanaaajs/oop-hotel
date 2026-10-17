@@ -29,12 +29,11 @@ public class Guest {
         // Bagian 4: kartu tamu juga dibuat di sini (lihat diagram Bagian 4).
         //
         // Kerangka:
-        //   if (guestId == null || ____) {
-        //       throw new IllegalArgumentException("____");
-        //   }
-        //   this.guestId = guestId;
-        //   setName(____);
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (guestId == null || guestId.trim().isEmpty()) {
+            throw new IllegalArgumentException("____");
+        }
+        this.guestId = guestId;
+        setName(name);
     }
 
     public String getGuestId() {
