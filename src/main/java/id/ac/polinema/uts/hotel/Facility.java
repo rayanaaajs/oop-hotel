@@ -14,8 +14,8 @@ package id.ac.polinema.uts.hotel;
  *   public ____ floorLocation;
  */
 public class Facility {
-    public String name;
-    public String floorLocation;
+    private String name;
+    private String floorLocation;
 
     /** Membuat fasilitas dengan nama dan lokasi lantai. */
     public Facility(String name, String floorLocation) {

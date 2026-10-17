@@ -15,6 +15,9 @@ package id.ac.polinema.uts.hotel;
  *   private int bookingCount;   // nilai awal 0
  */
 public class Guest {
+    private String guestId;
+    private String name;
+    private int bookingCount = 0;
 
     /**
      * Membuat tamu yang belum punya pemesanan.
@@ -36,12 +39,12 @@ public class Guest {
 
     public String getGuestId() {
         // TODO Bantuan: kembalikan data yang disimpan constructor.
-        throw new UnsupportedOperationException("Not implemented yet");
+        return guestId;
     }
 
     public String getName() {
         // TODO Bantuan: sama seperti getGuestId.
-        throw new UnsupportedOperationException("Not implemented yet");
+        return name;
     }
 
     /** Nama tidak boleh null atau kosong: lempar IllegalArgumentException dan biarkan nama lama. */
@@ -49,16 +52,15 @@ public class Guest {
         // TODO Bantuan: periksa dulu, baru isi field.
         //
         // Kerangka:
-        //   if (name == null || ____) {
-        //       throw new IllegalArgumentException("____");
-        //   }
-        //   this.name = name;
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("nama tidak boleh kosong");
+        }
+        this.name = name;
     }
 
     public int getBookingCount() {
         // TODO Bantuan: kembalikan jumlah pemesanan saat ini.
-        throw new UnsupportedOperationException("Not implemented yet");
+        return bookingCount;
     }
 
     /** True jika tamu masih boleh memesan (batasnya 2 pemesanan). */
@@ -66,8 +68,7 @@ public class Guest {
         // TODO Bantuan: apakah perlu field baru, atau cukup dihitung dari data yang sudah ada?
         //
         // Kerangka:
-        //   return bookingCount ____ 2;
-        throw new UnsupportedOperationException("Not implemented yet");
+        return bookingCount < 2;
     }
 
     /** Menambah jumlah pemesanan. Jika sudah di batas, tidak berubah dan hasilnya false. */
@@ -76,12 +77,11 @@ public class Guest {
         // menjawab pertanyaan "boleh atau tidak"?
         //
         // Kerangka:
-        //   if (!____) {
-        //       return false;
-        //   }
-        //   bookingCount++;
-        //   return true;
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (!canBook()) {
+            return false;
+        }
+        bookingCount++;
+        return true;
     }
 
     /** Mengurangi jumlah pemesanan. Jika sudah tidak ada pemesanan, tidak berubah dan hasilnya false. */
@@ -89,11 +89,10 @@ public class Guest {
         // TODO Bantuan: batas bawah jumlah pemesanan adalah berapa?
         //
         // Kerangka:
-        //   if (bookingCount == ____) {
-        //       return false;
-        //   }
-        //   bookingCount--;
-        //   return true;
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (bookingCount == 0) {
+            return false;
+        }
+        bookingCount--;
+        return true;
     }
 }

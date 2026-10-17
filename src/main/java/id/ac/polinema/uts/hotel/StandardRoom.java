@@ -17,10 +17,10 @@ package id.ac.polinema.uts.hotel;
  *   public ____ available;
  */
 public class StandardRoom {
-    public String roomNo;
-    public String name;
-    public int yearBuilt;
-    public boolean available;
+    private String roomNo;
+    private String name;
+    private int yearBuilt;
+    private boolean available;
 
     public StandardRoom(String roomNo, String name, int yearBuilt) {
         // TODO Bantuan: isi semua field. Kamar baru: apakah sedang terisi atau tidak?
@@ -29,13 +29,11 @@ public class StandardRoom {
         //
         // Kerangka (Bagian 2):
         this.roomNo = roomNo;
-        this.name = name;
-        this.yearBuilt = yearBuilt;
         this.available = true;
         //
         // Kerangka (Bagian 3): ganti dua baris name dan yearBuilt dengan pemanggilan setter.
-        //   setName(____);
-        //   setYearBuilt(____);
+        setName(name);
+        setYearBuilt(yearBuilt);
     }
 
     public String getRoomNo() {
@@ -88,11 +86,10 @@ public class StandardRoom {
         // memeriksa teks kosong atau hanya spasi. Jangan lupa kemungkinan null.
         //
         // Kerangka:
-        //   if (name == null || ____) {
-        //       throw new IllegalArgumentException("____");
-        //   }
-        //   this.name = name;
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("nama tidak boleh kosong");
+        }
+        this.name = name;
     }
 
     /**
@@ -103,10 +100,9 @@ public class StandardRoom {
         // TODO Bantuan: pola yang sama dengan setName. Apa syarat tahun yang valid?
         //
         // Kerangka:
-        //   if (yearBuilt ____ 1950) {
-        //       throw new IllegalArgumentException("____");
-        //   }
-        //   this.yearBuilt = yearBuilt;
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (yearBuilt < 1950) {
+            throw new IllegalArgumentException("tahun tidak boleh dibawah 1950");
+        }
+        this.yearBuilt = yearBuilt;
     }
 }
