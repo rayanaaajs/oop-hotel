@@ -30,7 +30,7 @@ public class Guest {
         //
         // Kerangka:
         if (guestId == null || guestId.trim().isEmpty()) {
-            throw new IllegalArgumentException("____");
+            throw new IllegalArgumentException("guest id tidak boleh kosong");
         }
         this.guestId = guestId;
         setName(name);
