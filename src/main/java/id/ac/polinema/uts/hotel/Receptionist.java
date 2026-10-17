@@ -10,8 +10,8 @@ public class Receptionist {
         return false;
     }
 
-    public boolean checkOut(StandardRoom room, Guest guest){
-        if (!room.isAvailable() && guest.getBookingCount() > 0) {
+    public boolean checkOut(Guest guest, StandardRoom room){
+        if (guest.getBookingCount() > 0 && !room.isAvailable()) {
             room.release();
             guest.removeBooking();
             return true;
