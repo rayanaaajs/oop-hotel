@@ -28,6 +28,9 @@ public class StandardRoom {
         // memakai setter-nya?
         //
         // Kerangka (Bagian 2):
+        if (roomNo == null || roomNo.trim().isEmpty()) {
+            throw new IllegalArgumentException("nomor kamar tidak boleh kosong");
+        }
         this.roomNo = roomNo;
         this.available = true;
         //

@@ -23,6 +23,9 @@ public class Facility {
         // menunjuk ke objek yang sedang dibuat?
         //
         // Kerangka:
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("nama tidak boleh kosong");
+        }
         this.name = name;
         this.floorLocation = floorLocation;
 
