@@ -5,13 +5,13 @@ public class DeluxeRoom extends HotelRoom {
 
     public DeluxeRoom(String name, int yearBuilt, String viewType){
         super(name, yearBuilt);
-        if (viewType == null && viewType.trim().isEmpty()) {
+        if (viewType == null || viewType.trim().isEmpty()) {
             throw new IllegalArgumentException("Tipe view tidak boleh kosong");
         }
         this.viewType = viewType;
     }
 
-    public String getViewtype(){
+    public String getViewType(){
         return viewType;
     }
 }
