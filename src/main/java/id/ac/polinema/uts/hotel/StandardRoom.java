@@ -31,7 +31,7 @@ public class StandardRoom {
         this.roomNo = roomNo;
         this.name = name;
         this.yearBuilt = yearBuilt;
-        this.available = available;
+        this.available = true;
         //
         // Kerangka (Bagian 3): ganti dua baris name dan yearBuilt dengan pemanggilan setter.
         //   setName(____);
@@ -52,7 +52,7 @@ public class StandardRoom {
 
     /** True jika kamar kosong (belum dipesan). */
     public boolean isAvailable() {
-        return available = true;
+        return available;
     }
 
     /**

@@ -24,7 +24,7 @@ public class Facility {
         //
         // Kerangka:
         this.name = name;
-        this.floorLocation = name;
+        this.floorLocation = floorLocation;
 
     }
 
@@ -32,12 +32,12 @@ public class Facility {
         // TODO Bantuan: kembalikan data yang disimpan constructor.
         //
         // Kerangka:
-        return getName();
+        return name;
     }
 
     public String getFloorLocation() {
         // TODO Bantuan: sama seperti getName.
-        return getFloorLocation();
+        return floorLocation;
     }
 
     /** Teks berbentuk "nama [lantai]". Contoh: Rooftop Gym [Floor 9]. */
