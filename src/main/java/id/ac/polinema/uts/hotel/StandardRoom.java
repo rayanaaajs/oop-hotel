@@ -47,7 +47,7 @@ public class StandardRoom extends HotelRoom {
 
     public String describe(){
         String facilityName = (facility != null) ? facility.getName() : "None";
-        return super.describe() + "facility: " + facilityName ;
+        return super.describe() + " facility: " + facilityName ;
     }
 
 }
