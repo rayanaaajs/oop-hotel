@@ -55,7 +55,7 @@ public class HotelRoom {
     }
 
     public String describe(){
-        return name + " (" + yearBuilt + ")";
+        return name + " (built " + yearBuilt + ") ";
     }
 
     @Override 
@@ -64,7 +64,7 @@ public class HotelRoom {
     }
     
     public void extendStay(){
-        extraNights = 2;
+        extendStay(2);
     }
 
     public void extendStay(int nights){
