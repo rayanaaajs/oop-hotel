@@ -14,6 +14,8 @@ package id.ac.polinema.uts.hotel;
  *   public ____ floorLocation;
  */
 public class Facility {
+    public String name;
+    public String floorLocation;
 
     /** Membuat fasilitas dengan nama dan lokasi lantai. */
     public Facility(String name, String floorLocation) {
@@ -21,22 +23,21 @@ public class Facility {
         // menunjuk ke objek yang sedang dibuat?
         //
         // Kerangka:
-        //   this.name = ____;
-        //   this.floorLocation = ____;
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.name = name;
+        this.floorLocation = name;
+
     }
 
     public String getName() {
         // TODO Bantuan: kembalikan data yang disimpan constructor.
         //
         // Kerangka:
-        //   return ____;
-        throw new UnsupportedOperationException("Not implemented yet");
+        return getName();
     }
 
     public String getFloorLocation() {
         // TODO Bantuan: sama seperti getName.
-        throw new UnsupportedOperationException("Not implemented yet");
+        return getFloorLocation();
     }
 
     /** Teks berbentuk "nama [lantai]". Contoh: Rooftop Gym [Floor 9]. */
@@ -44,7 +45,6 @@ public class Facility {
         // TODO Bantuan: gabungkan dua data dengan operator + dan tanda kurung siku dalam String.
         //
         // Kerangka:
-        //   return name + " [" + ____ + "]";
-        throw new UnsupportedOperationException("Not implemented yet");
+        return name + " [" + floorLocation + "]";
     }
 }
