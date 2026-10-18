@@ -33,13 +33,11 @@ public class Hotel {
 
         for (int i = 0; i < guestCount; i++) {
         if (guests[i].getGuestId().equalsIgnoreCase(guest.getGuestId())) {
-            System.out.println("Guest ID already exists");
             return false;
             }
         }
         guests[guestCount] = guest;
         guestCount++;
-        System.out.println("Guest registered");
         return true;
     }
 
@@ -106,7 +104,7 @@ public class Hotel {
             return false;
         }
 
-        if (room.isAvailable() && guest.getBookingCount() > 0) {
+        if (!room.isAvailable() && guest.getBookingCount() > 0) {
             room.release();
             guest.removeBooking();
             return true;
