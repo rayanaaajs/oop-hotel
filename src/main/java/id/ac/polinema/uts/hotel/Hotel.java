@@ -80,7 +80,7 @@ public class Hotel {
         return Arrays.copyOf(temp, found);
     }
 
-    public boolean checkIn(String roomName, String guestId){
+    public boolean checkIn(String guestId, String roomName){
         Guest guest = findGuest(guestId);
         HotelRoom room = findRoomByName(roomName);
 
@@ -96,7 +96,7 @@ public class Hotel {
         return false;
     }
 
-    public boolean checkOut(String roomName, String guestId){
+    public boolean checkOut(String guestId, String roomName){
         Guest guest = findGuest(guestId);
         HotelRoom room = findRoomByName(roomName);
 
