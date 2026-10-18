@@ -100,7 +100,7 @@ public class HotelApp {
     private void showRooms(){
         HotelRoom[] rooms = hotel.getRooms();
         if (rooms.length == 0) {
-            out.print("no rooms");
+            out.println("No rooms");
         }
         for (HotelRoom hotelRoom : rooms) {
             printRoomLine(hotelRoom);
@@ -132,7 +132,7 @@ public class HotelApp {
             }
             
         } catch (IllegalArgumentException e) {
-            out.println("Reject: " + e.getMessage());
+            out.println("Rejected: " + e.getMessage());
         }
     }
 
@@ -190,7 +190,7 @@ public class HotelApp {
             if (added) {
                 out.println("Guest registered");
             } else {
-                out.println("Guest already exist");
+                out.println("Guest ID already exists");
             }
         } catch (IllegalArgumentException e) {
             out.println("Rejected: " + e.getMessage());
@@ -203,9 +203,9 @@ public class HotelApp {
 
         boolean success = hotel.checkIn(guestId, roomName);
         if (success) {
-            out.println("Check in successful");
+            out.println("Check-in successful");
         } else {
-            out.println("Check in failed");
+            out.println("Check-in failed");
         }
     }
 
@@ -213,11 +213,11 @@ public class HotelApp {
         String guestId = readLine("Guest ID: ");
         String roomName = readLine("Room name: ");
 
-        boolean success = hotel.checkOut(roomName, guestId);
+        boolean success = hotel.checkOut(guestId, roomName);
         if (success) {
-            out.println("Check out successfull");
+            out.println("Check-out successfull");
         } else {
-            out.println("Check out failed");
+            out.println("Check-out failed");
         }
     }
 
@@ -226,7 +226,7 @@ public class HotelApp {
         HotelRoom[] results = hotel.searchByKeyword(keyword);
 
         if (results.length == 0) {
-            out.println("No room found");
+            out.println("No rooms found");
         }
 
         for (HotelRoom hotelRoom : results) {

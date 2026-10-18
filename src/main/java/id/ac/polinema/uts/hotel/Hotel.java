@@ -7,7 +7,7 @@ public class Hotel {
     private HotelRoom[] rooms = new HotelRoom[20];
     private int roomCount = 0;
     private Guest[] guests = new Guest[10];
-    private int guestCount;
+    private int guestCount = 0;
 
     public Hotel(String name){
         this.name = name;
@@ -30,8 +30,16 @@ public class Hotel {
         if (guest == null || guestCount == guests.length) {
             return false;
         }
+
+        for (int i = 0; i < guestCount; i++) {
+        if (guests[i].getGuestId().equalsIgnoreCase(guest.getGuestId())) {
+            System.out.println("Guest ID already exists");
+            return false;
+            }
+        }
         guests[guestCount] = guest;
         guestCount++;
+        System.out.println("Guest registered");
         return true;
     }
 
@@ -98,11 +106,11 @@ public class Hotel {
             return false;
         }
 
-        if (!room.isAvailable() && guest.getBookingCount() > 0) {
+        if (room.isAvailable() && guest.getBookingCount() > 0) {
             room.release();
             guest.removeBooking();
             return true;
-        }  
-        return false;
+        }
+        return false;  
     }
 }
