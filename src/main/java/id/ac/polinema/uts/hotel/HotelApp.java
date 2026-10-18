@@ -203,7 +203,7 @@ public class HotelApp {
 
         boolean success = hotel.checkIn(guestId, roomName);
         if (success) {
-            out.println("Check-in successful");
+            out.println("Check-in successfull");
         } else {
             out.println("Check-in failed");
         }
